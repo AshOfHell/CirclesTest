@@ -1,5 +1,7 @@
 #pragma once
 
+#include <array>
+
 class Curve
 {
 private:
@@ -17,5 +19,5 @@ public:
 	{
 		this->Radius = Radius;
 	};
-	float* GetCoordinates(float Angle, float Radius);
+	std::array<float, 2> GetCoordinates(float Angle, float Radius);
 };

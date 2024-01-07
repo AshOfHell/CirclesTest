@@ -1,6 +1,7 @@
 #include "Circles.h"
 #include <iostream>
 #include <math.h>
+#include <array>
 
 Curve::Curve(float InitialRadiusX, float InitialRadiusY) 
 {
@@ -8,11 +9,10 @@ Curve::Curve(float InitialRadiusX, float InitialRadiusY)
 	RadiusY = InitialRadiusY;
 }
 
-float* Circle::GetCoordinates(float Angle, float Radius)
+std::array<float, 2> Circle::GetCoordinates(float Angle, float Radius)
 {
-	float* Array = new float[2];
+	std::array<float, 2> Array;
 	Array[0] = Radius * cos(Angle);
 	Array[1] = Radius * sin(Angle);
 	return Array;
-	delete[] Array;
 }
